@@ -1,0 +1,297 @@
+/* General Styling */
+:root {
+    --primary-color: #8B5CF6; /* Ungu */
+    --secondary-color: #1F2937; /* Abu-abu tua */
+    --background-color: #111827; /* Hitam kebiruan */
+    --text-color: #E5E7EB; /* Abu-abu terang */
+    --card-bg: #1F2937;
+    --highlight-color: #34D399; /* Hijau Mint */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none; /* Menghapus underline dari logo yang kini adalah link */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content & Sections */
+main {
+    padding-top: 80px; /* Space for fixed header */
+}
+
+section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-text .highlight {
+    color: var(--primary-color);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #7c4dff;
+    transform: translateY(-3px);
+}
+
+/* About Section -- UPDATED */
+.about-content {
+    display: flex;
+    align-items: flex-start; /* Mengubah ke flex-start agar sejajar dari atas */
+    gap: 3rem;
+    max-width: 900px; /* Sedikit lebih lebar untuk konten baru */
+    margin: auto;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    flex-shrink: 0; /* Mencegah gambar menyusut */
+}
+
+.about-text h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skills-list li {
+    background: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+/* Projects Section -- UPDATED */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Sedikit lebih lebar untuk item */
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Membuat layout flex kolom */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.project-card figure, .project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.5rem;
+    flex-grow: 1; /* Memastikan info memenuhi ruang tersisa */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    flex-grow: 1; /* Mendorong link ke bawah */
+}
+
+.project-links {
+    margin-top: 1.5rem; /* Memberi jarak lebih */
+    display: flex;
+    gap: 1.5rem; /* Memberi jarak lebih antar link */
+}
+
+.project-links a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex; /* Mengaktifkan flexbox */
+    align-items: center; /* Menyejajarkan ikon dan teks secara vertikal */
+    gap: 0.5rem; /* Jarak antara ikon dan teks */
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: #6ee7b7; /* Warna hover yang lebih terang */
+    text-decoration: none;
+}
+
+
+/* Contact Section -- UPDATED */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Animation on Scroll */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Sembunyikan untuk versi mobile yang lebih simpel */
+    }
+    
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center; /* Menengahkan item saat di mobile */
+        text-align: center;
+    }
+}
